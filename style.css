@@ -900,18 +900,25 @@ body {
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
 }
 
-/* Posisi 3 Kartu Planet (120 derajat) dengan jarak saling berdekatan proporsional */
+/* Jarak Orbit DIPERBESAR (TranslateZ) agar 5 kartu tidak berdempetan */
 .item1 {
-    transform: rotateY(0deg) translateZ(160px);
+    transform: rotateY(0deg) translateZ(340px);
 }
 
 .item2 {
-    transform: rotateY(120deg) translateZ(160px);
+    transform: rotateY(72deg) translateZ(340px);
 }
 
-.item3,
+.item3 {
+    transform: rotateY(144deg) translateZ(340px);
+}
+
+.item4 {
+    transform: rotateY(216deg) translateZ(340px);
+}
+
 .item5 {
-    transform: rotateY(240deg) translateZ(160px);
+    transform: rotateY(288deg) translateZ(340px);
 }
 
 /* =========================================
@@ -1657,18 +1664,25 @@ body {
         font-size: 0.95rem;
     }
 
-    /* Menyesuaikan jarak orbit 3 kartu di HP */
+    /* Menyesuaikan jarak orbit 5 kartu di HP */
     .item1 {
-        transform: rotateY(0deg) translateZ(120px);
+        transform: rotateY(0deg) translateZ(200px);
     }
 
     .item2 {
-        transform: rotateY(120deg) translateZ(120px);
+        transform: rotateY(72deg) translateZ(200px);
     }
 
-    .item3,
+    .item3 {
+        transform: rotateY(144deg) translateZ(200px);
+    }
+
+    .item4 {
+        transform: rotateY(216deg) translateZ(200px);
+    }
+
     .item5 {
-        transform: rotateY(240deg) translateZ(120px);
+        transform: rotateY(288deg) translateZ(200px);
     }
 
     #main-content {
@@ -2147,13 +2161,13 @@ body {
     padding: 14px 36px;
     font-family: 'Caveat', cursive;
     font-size: 1.5rem;
-    color: #5a0022;
-    background: linear-gradient(135deg, #fdd835, #ff1493, #f57f17);
-    border: 2px solid rgba(255, 105, 180, 0.4);
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff85c0, #ff1493, #e0007b);
+    border: 2px solid rgba(255, 255, 255, 0.7);
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 20px rgba(253, 216, 53, 0.4), 0 0 30px rgba(253, 216, 53, 0.15);
+    box-shadow: 0 4px 20px rgba(255, 20, 147, 0.4), 0 0 30px rgba(255, 105, 180, 0.25);
     animation: candleBtnPulse 2.5s ease-in-out infinite;
     position: relative;
     overflow: hidden;
@@ -2166,19 +2180,20 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
     transform: rotate(45deg);
     animation: shimmerBtn 3s ease-in-out infinite;
 }
 
 .btn-tiup-lilin:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 30px rgba(253, 216, 53, 0.6), 0 0 50px rgba(253, 216, 53, 0.25);
+    background: linear-gradient(135deg, #ffa3d0, #ff1493, #c71585);
+    box-shadow: 0 8px 30px rgba(255, 20, 147, 0.6), 0 0 50px rgba(255, 105, 180, 0.35);
 }
 
 @keyframes candleBtnPulse {
-    0%, 100% { box-shadow: 0 4px 20px rgba(253, 216, 53, 0.4), 0 0 30px rgba(253, 216, 53, 0.15); }
-    50% { box-shadow: 0 4px 30px rgba(253, 216, 53, 0.6), 0 0 50px rgba(253, 216, 53, 0.3); }
+    0%, 100% { box-shadow: 0 4px 20px rgba(255, 20, 147, 0.4), 0 0 30px rgba(255, 105, 180, 0.25); }
+    50% { box-shadow: 0 4px 30px rgba(255, 105, 180, 0.6), 0 0 50px rgba(255, 182, 193, 0.4); }
 }
 
 @keyframes shimmerBtn {
@@ -2197,7 +2212,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 99990;
-    background: radial-gradient(ellipse at center bottom, #301b00 0%, #1a0e00 40%, #0a0500 80%, #000000 100%);
+    background: radial-gradient(ellipse at center bottom, #3b0d26 0%, #220616 45%, #12020d 80%, #050005 100%);
     opacity: 0;
     transition: opacity 0.8s ease;
     overflow-y: auto;
@@ -2287,8 +2302,8 @@ body {
 .candle-message {
     font-family: 'Caveat', cursive;
     font-size: 1.6rem;
-    color: #fdd835;
-    text-shadow: 0 0 15px rgba(253, 216, 53, 0.5);
+    color: #ffb6c1;
+    text-shadow: 0 0 15px rgba(255, 182, 193, 0.7), 0 0 30px rgba(255, 105, 180, 0.4);
     margin-bottom: 30px;
     min-height: 60px;
     opacity: 0;
@@ -2391,11 +2406,11 @@ body {
     /* Wax gradient effect */
     background: linear-gradient(
         180deg,
-        #ffcce0 0%,
-        #ffb6d3 15%,
-        #ff9ecf 30%,
-        #e876a8 55%,
-        #d65d8c 75%,
+        #ffffff 0%,
+        #ffe4ec 15%,
+        #ff9ecf 35%,
+        #e876a8 60%,
+        #d65d8c 80%,
         #c44e7d 100%
     );
     -webkit-background-clip: text;
@@ -2403,10 +2418,10 @@ body {
     background-clip: text;
     /* 3D wax-like depth with paint-order trick */
     paint-order: stroke fill;
-    -webkit-text-stroke: 3px rgba(200, 80, 130, 0.5);
+    -webkit-text-stroke: 3px rgba(255, 105, 180, 0.6);
     filter: drop-shadow(1px 2px 1px rgba(0,0,0,0.35))
-            drop-shadow(-1px 0px 1px rgba(255,255,255,0.15))
-            drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+            drop-shadow(-1px 0px 1px rgba(255,255,255,0.4))
+            drop-shadow(0 4px 10px rgba(255, 105, 180, 0.3));
 }
 
 
@@ -2531,41 +2546,42 @@ body {
     width: 200px;
 }
 
-/* Kue bertema kuning */
+/* Kue bertema Pink & White */
 .cake-top {
     width: 200px;
-    height: 18px;
-    background: linear-gradient(180deg, #fdd835, #ff1493);
-    border-radius: 8px 8px 0 0;
+    height: 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #ffe4ec 60%, #ffb6c1 100%);
+    border-radius: 10px 10px 0 0;
     position: relative;
     z-index: 1;
-    box-shadow: 0 -2px 8px rgba(253, 216, 53, 0.3);
+    box-shadow: 0 -3px 12px rgba(255, 182, 193, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.9);
 }
 
 .cake-middle {
     width: 200px;
     height: 55px;
-    background: linear-gradient(180deg, #fff0f5, #ffd1dc);
+    background: linear-gradient(180deg, #ffffff 0%, #fff0f5 40%, #ffd1dc 100%);
     position: relative;
-    border-left: 3px solid rgba(255,255,255,0.1);
-    border-right: 3px solid rgba(0,0,0,0.05);
+    border-left: 3px solid rgba(255, 255, 255, 0.6);
+    border-right: 3px solid rgba(255, 105, 180, 0.2);
+    box-shadow: inset 0 0 15px rgba(255, 192, 203, 0.3);
 }
 
 .cake-bottom {
     width: 200px;
     height: 55px;
-    background: linear-gradient(180deg, #fdd835, #ff1493);
-    border-radius: 0 0 8px 8px;
+    background: linear-gradient(180deg, #ff85b3 0%, #ff4d94 50%, #d81b60 100%);
+    border-radius: 0 0 10px 10px;
     position: relative;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    border-left: 3px solid rgba(255,255,255,0.1);
-    border-right: 3px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(216, 27, 96, 0.4), 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+    border-right: 3px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Frosting drips */
+/* Frosting drips (Lelehan Krim Putih & Soft Pink) */
 .cake-frosting {
     position: absolute;
-    top: 15px;
+    top: 16px;
     left: 0;
     width: 100%;
     display: flex;
@@ -2577,14 +2593,16 @@ body {
     display: block;
     width: 16px;
     height: 22px;
-    background: linear-gradient(180deg, #ffb6c1, #fdd835);
+    background: linear-gradient(180deg, #ffffff 0%, #ffeef5 50%, #ffb6c1 100%);
     border-radius: 0 0 50% 50%;
     animation: frostDrip 3s ease-in-out infinite alternate;
+    box-shadow: 0 3px 6px rgba(255, 105, 180, 0.25);
 }
 
 .cake-frosting span:nth-child(even) {
     height: 28px;
     animation-delay: 0.5s;
+    background: linear-gradient(180deg, #ffffff 0%, #ffccd8 60%, #ff8da1 100%);
 }
 
 @keyframes frostDrip {
@@ -2601,7 +2619,8 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 0 10px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    filter: drop-shadow(0 2px 4px rgba(255, 105, 180, 0.4));
 }
 
 /* Glow di sekitar kue */
@@ -2611,9 +2630,9 @@ body {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 250px;
+    width: 260px;
     height: 60px;
-    background: radial-gradient(ellipse, rgba(253, 216, 53, 0.2), transparent 70%);
+    background: radial-gradient(ellipse, rgba(255, 105, 180, 0.35), rgba(255, 192, 203, 0.15) 50%, transparent 70%);
     border-radius: 50%;
     z-index: 0;
 }
@@ -2628,18 +2647,19 @@ body {
     font-family: 'Caveat', cursive;
     font-size: 1.4rem;
     color: #fff;
-    background: linear-gradient(135deg, #fdd835, #ff1493, #f57f17);
-    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: linear-gradient(135deg, #ff85c0, #ff1493, #e0007b);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 20px rgba(253, 216, 53, 0.4);
+    box-shadow: 0 4px 20px rgba(255, 20, 147, 0.4);
     animation: tiupBtnGlow 2s ease-in-out infinite;
 }
 
 .btn-mulai-tiup:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 30px rgba(253, 216, 53, 0.6);
+    background: linear-gradient(135deg, #ffa3d0, #ff1493, #c71585);
+    box-shadow: 0 8px 30px rgba(255, 20, 147, 0.6);
 }
 
 .btn-mulai-tiup.hidden-btn {
@@ -2650,8 +2670,8 @@ body {
 }
 
 @keyframes tiupBtnGlow {
-    0%, 100% { box-shadow: 0 4px 20px rgba(253, 216, 53, 0.4); }
-    50% { box-shadow: 0 4px 30px rgba(253, 216, 53, 0.7), 0 0 40px rgba(249, 168, 37, 0.2); }
+    0%, 100% { box-shadow: 0 4px 20px rgba(255, 20, 147, 0.4); }
+    50% { box-shadow: 0 4px 30px rgba(255, 105, 180, 0.7), 0 0 40px rgba(255, 182, 193, 0.4); }
 }
 
 /* =========================================
@@ -2770,7 +2790,7 @@ body {
 .candle-message.final-msg {
     font-size: 1.3rem;
     color: #ffffff;
-    text-shadow: 0 0 20px rgba(253, 216, 53, 0.6), 0 0 40px rgba(253, 216, 53, 0.3);
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 182, 193, 0.5);
     max-width: 320px;
     line-height: 1.6;
 }
@@ -2805,21 +2825,22 @@ body {
     font-family: 'Outfit', sans-serif;
     font-size: 0.9rem;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.8);
-    background: rgba(253, 216, 53, 0.15);
+    color: #ffffff;
+    background: rgba(255, 105, 180, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(253, 216, 53, 0.3);
+    border: 1px solid rgba(255, 182, 193, 0.4);
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .btn-back-candle:hover {
-    background: rgba(253, 216, 53, 0.25);
+    background: rgba(255, 105, 180, 0.35);
     color: #fff;
     transform: translateX(-50%) scale(1.05);
-    border-color: rgba(253, 216, 53, 0.5);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
 }
 
 /* =========================================
@@ -2867,10 +2888,10 @@ body {
 .hold-progress-fill {
     width: 0%;
     height: 100%;
-    background: linear-gradient(90deg, #fdd835, #ff1493, #f57f17);
+    background: linear-gradient(90deg, #ffffff, #ffb6c1, #ff1493);
     border-radius: 3px;
     transition: width 0.05s linear;
-    box-shadow: 0 0 8px rgba(253, 216, 53, 0.6);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
 }
 
 /* Visual feedback saat menekan kue */

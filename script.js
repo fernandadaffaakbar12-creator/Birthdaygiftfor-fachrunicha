@@ -245,7 +245,7 @@
         const pinPopupClose = document.getElementById('pin-popup-close');
 
         // DEFAULT PIN: Silakan ubah angka ini jika ingin PIN lain
-        const SECRET_PIN = "2704";
+        const SECRET_PIN = "1608";
 
         let pinAttempt = 0;
         let popupTimeout = null;
@@ -640,7 +640,7 @@ function handleRotateAndPlay(videoId) {
 
     // Masuk fullscreen dan coba kunci orientasi horizontal
     if (video.requestFullscreen) {
-        video.requestFullscreen().catch(() => {});
+        video.requestFullscreen().catch(() => { });
     } else if (video.webkitRequestFullscreen) {
         video.webkitRequestFullscreen();
     } else if (video.webkitEnterFullscreen) {
@@ -649,10 +649,10 @@ function handleRotateAndPlay(videoId) {
     }
 
     if (screen.orientation && screen.orientation.lock) {
-        screen.orientation.lock('landscape').catch(() => {});
+        screen.orientation.lock('landscape').catch(() => { });
     }
 
-    video.play().catch(() => {});
+    video.play().catch(() => { });
 }
 
 // ==========================================
